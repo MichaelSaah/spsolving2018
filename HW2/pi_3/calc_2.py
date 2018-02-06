@@ -7,7 +7,7 @@ all_tups = []
 
 i=0
 
-while i < 10**7:
+while i < 10**6:
     if pi[i] == '3':
         k = 0
         while pi[i+k] == '3':
