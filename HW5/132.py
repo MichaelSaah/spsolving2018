@@ -1,21 +1,15 @@
-from sympy import factorint
+from sympy import sieve
 
+num_facs = 40
+N = 10**9
 
-def R(k):
-    sum = 1
-    for i in range(1,k):
-        sum += 10**(i)
-    return sum
+factors = []
 
+for prime in sieve:
+    if pow(10, N, 9*prime) == 1:
+        factors.append(prime)
+        
+        if len(factors) == 40:
+            break
 
-factors = set()
-
-k = 1
-while len(factors) < 40:
-    if k%5 == 0 or k%2 == 0:
-        for factor in factorint(R(k)).keys():
-            factors.add(factor)
-    k+=1
-
-print(factors)
 print(sum(factors))
