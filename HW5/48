@@ -1,0 +1,3 @@
+The following Mathematica expression will give the last ten digits of the requested sum
+
+FromDigits[IntegerDigits[Sum[i^i, {i, 1, 1000}]][[-10 ;;]]]
